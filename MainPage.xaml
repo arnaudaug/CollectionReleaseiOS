@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionReleaseiOS.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+            
+            <Button LineBreakMode="WordWrap"
+                    Clicked="NavigateEditListPageTry1" Text="Generic listpage with one Invoked event : KO on Release, OK on Debug" />
+            <Button LineBreakMode="WordWrap"
+                    Clicked="NavigateEditListPageTry2" Text="Generic listpage with many Invoked events : Big KO on Release, OK on Debug" />
+            <Button LineBreakMode="WordWrap"
+                    Clicked="NavigateEditListPageClassic" Text="Classic page with Invoked event : OK on Release, OK on Debug" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
