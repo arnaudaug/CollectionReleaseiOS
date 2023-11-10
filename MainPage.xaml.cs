@@ -92,7 +92,7 @@ public partial class MainPage : ContentPage
 				var roomTypeViewModel = new RoomTypeViewModel();
 				var loadedViewModel = await roomTypeViewModel.LoadDataAndCreateViewModelAsync();
 				loadedViewModel.Items = new ObservableCollection<Room>(rooms);
-				var genericListPage = new ListPageClassic(rooms);
+				var genericListPage = new ListPageClassic2(rooms);
 				await Navigation.PushAsync(genericListPage);
 			} catch (Exception ex) {
 				Console.WriteLine($"Exception: {ex}");

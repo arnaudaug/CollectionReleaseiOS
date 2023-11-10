@@ -31,13 +31,22 @@ public class ListPageTry1<TEntity, TType> : ListBaseTry1
 		}
 	}
 	
-	protected override void OnDeleteSwipeItemInvoked(object sender, EventArgs e)
+	protected override async void OnDeleteSwipeItemInvoked(object sender, EventArgs e)
 	{
-		if (sender is not SwipeItem swipeItem) return;
-		var selectedItem = swipeItem.BindingContext as TEntity;
-		if (selectedItem != null && Items != null) {
-			Items.Remove(selectedItem);
-			UpdateItemNumbers();
+		try
+		{
+			if (sender is not SwipeItem swipeItem) return;
+			var selectedItem = swipeItem.BindingContext as TEntity;
+			if (selectedItem != null && Items != null)
+			{
+				Items.Remove(selectedItem);
+				UpdateItemNumbers();
+			}
+		}
+		catch (Exception ex)
+		{
+			// Remplacez 'this' par votre instance de Page si nécessaire
+			await this.DisplayAlert("Erreur", $"Une erreur est survenue : {ex.Message}", "OK");
 		}
 	}
 }

@@ -74,6 +74,9 @@
 	    <SubType>Designer</SubType>
 	  </MauiXaml>
 	  <MauiXaml Remove="Views\Generic\ListPageTry3.xaml" />
+	  <MauiXaml Update="Views\Generic\ListPageClassic2.xaml">
+	    <SubType>Designer</SubType>
+	  </MauiXaml>
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Update="Views\Generic\ListPageTry2.xaml.cs">
@@ -82,6 +85,10 @@
 	  </Compile>
 	  <Compile Remove="Views\Generic\ListPageTry3.xaml.cs" />
 	  <Compile Remove="Views\Generic\ListBaseTry3.cs" />
+	  <Compile Update="Views\Generic\ListPageClassic2.xaml.cs">
+	    <DependentUpon>ListPageClassic2.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
   <PropertyGroup Condition="$(TargetFramework.Contains('-maccatalyst')) and '$(Configuration)' == 'Debug'">
     <CodesignEntitlements>Platforms/MacCatalyst/Entitlements.Debug.plist</CodesignEntitlements>
@@ -93,15 +100,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
     <CreatePackage>false</CreatePackage>
-    <CodesignKey></CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
     <CreatePackage>false</CreatePackage>
-    <CodesignProvision>Automatic</CodesignProvision>
-    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
